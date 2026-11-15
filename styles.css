@@ -1,0 +1,336 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+:root {
+    --color1: #f5c9df;
+    --color2: #c9e9f5;
+    --color3: #d9f2c7;
+    --color4: #ffe0bd;
+    --color5: #f8e8a6;
+
+    --mainFont: "Lexend", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: var(--mainFont);
+    font-weight: 300;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #fffaf8;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+/* === GRID === */
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-areas:
+        "a b b g"
+        "a c d h"
+        "a e f h";
+
+    gap: 1rem;
+
+    padding: 1rem;
+}
+
+/* === ESTILOS GENERALES === */
+
+.box {
+    border-radius: 0.75rem;
+
+    padding: 1rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+/* === ITEM 1 === */
+
+.box__1 {
+    background-color: #e8c5f4;
+
+    grid-area: a;
+
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.box__1 img {
+    width: 90%;
+
+    height: 45%;
+
+    object-fit: cover;
+
+    border-radius: 1rem;
+}
+
+.box__1 h1 {
+    color: #80538e;
+
+    font-size: 1.5rem;
+}
+
+.box__1 p {
+    color: #80538e;
+}
+
+/* === ITEM 2 === */
+
+.box__2 {
+    background-color: #c9e9f5;
+
+    grid-area: b;
+
+    flex-direction: row;
+}
+
+.box__2 article {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 0.75rem;
+}
+
+.box__2 h2 {
+    color: #466d7b;
+
+    font-size: 1.5rem;
+}
+
+.box__2 p {
+    color: #557580;
+}
+
+/* === ITEM 3 === */
+
+.box__3 {
+    background-color: #d9f2c7;
+
+    grid-area: c;
+}
+
+.box__3 ul {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    list-style: none;
+}
+
+.box__3 h3 {
+    color: #648a4d;
+}
+
+.box__3 li {
+    color: #547442;
+}
+
+/* === ITEM 4 === */
+
+.box__4 {
+    background-color: #ffe0bd;
+
+    grid-area: d;
+
+    flex-direction: column;
+}
+
+.box__4 blockquote {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    color: #805a43;
+}
+
+.box__4 h3 {
+    color: #a16f4c;
+}
+
+/* === ITEM 5 === */
+
+.box__5 {
+    background-color: #f8d4df;
+
+    grid-area: e;
+}
+
+.box__5 ol {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    text-align: left;
+
+    color: #795565;
+}
+
+.box__5 h3 {
+    color: #a65f79;
+}
+
+/* === ITEM 6 === */
+
+.box__6 {
+    background-color: #bdebf5;
+
+    grid-area: f;
+}
+
+.box__6 video {
+    width: 100%;
+
+    max-height: 100%;
+
+    border-radius: 0.75rem;
+}
+
+/* === ITEM 7 === */
+
+.box__7 {
+    background-color: #f8cbd3;
+
+    grid-area: g;
+}
+
+.box__7 nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+}
+
+.box__7 h3 {
+    color: #925667;
+}
+
+.box__7 a {
+    text-decoration: none;
+
+    color: #80536a;
+
+    font-weight: 600;
+}
+
+/* === ITEM 8 === */
+
+.box__8 {
+    background-color: #f8e8a6;
+
+    grid-area: h;
+}
+
+.box__8 aside {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    color: #806b49;
+}
+
+.box__8 h2 {
+    color: #8c693a;
+}
+
+/* === ADAPTACIÓN A PANTALLAS PEQUEÑAS === */
+
+@media (max-width: 700px) {
+
+    body {
+        height: auto;
+    }
+
+    .container {
+        height: auto;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: repeat(5, minmax(180px, auto));
+
+        grid-template-areas:
+            "a a"
+            "b b"
+            "c d"
+            "e f"
+            "g h";
+    }
+
+    .box__1 {
+        min-height: 350px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+            "f"
+            "g"
+            "h";
+    }
+
+    .box {
+        min-height: 190px;
+    }
+
+}
